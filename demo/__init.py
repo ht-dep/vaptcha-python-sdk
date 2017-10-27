@@ -1,0 +1,1 @@
+from vaptchasdk import vaptcha

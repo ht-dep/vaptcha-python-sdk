@@ -1,0 +1,8 @@
+setup.py
+VAPTCHA.egg-info/SOURCES.txt
+vaptcha.egg-info/PKG-INFO
+vaptcha.egg-info/SOURCES.txt
+vaptcha.egg-info/dependency_links.txt
+vaptcha.egg-info/top_level.txt
+vaptchasdk/__init__.py
+vaptchasdk/vaptcha.py
