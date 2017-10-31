@@ -15,7 +15,7 @@ if __name__ == "__main__":
         name="VAPTCHA",
         version=VERSION,
         packages=['vaptchasdk'],
-        url='https://github.com/VaptchaTeam/vaptcha-python-sdk',
+        url='https://github.com/vaptcha/vaptcha-python-sdk',
         license='',
         author='VAPTCHA',
         author_email='vaptcha@wlinno.com',

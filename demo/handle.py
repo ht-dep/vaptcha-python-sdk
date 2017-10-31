@@ -2,9 +2,9 @@
 import os
 import json
 from vaptchasdk import vaptcha
-VAPTCHAVID, VAPTHCHAKEY = 'xxxxxxxxxxxxxxxxxxxxxxxx', 'xxxxxxxxxxxxxxxxxxxxxxxx'
+vid, key = '59f7ebdca485d4214c4e97c7', '9d3aca4ce620473489ea02517aa6acc4'
 work_dir = os.path.dirname(os.path.abspath(__file__))
-_vaptcha = vaptcha(VAPTCHAVID, VAPTHCHAKEY)
+_vaptcha = vaptcha(vid, key)
 
 def application(environ, start_response):
 
@@ -13,10 +13,12 @@ def application(environ, start_response):
     stream = None
     if method == 'GET' and path == '/':
         start_response('200 OK', [('Content-Type', 'text/html')])
-        with open(work_dir + '/templates/index.html', 'r') as f:
-            # ascii to str
-            fstr = f.read().decode('utf-8')
-            stream = fstr.decode('utf-8').encode('utf-8')
+        with open(work_dir + '/templates/index.html', 'rb') as f:
+            try:
+                fstr = f.read().decode('utf-8')
+            except AttributeError:
+                fstr = f.read()          
+            stream = fstr.encode('utf-8')
         return [stream]
     elif method == 'GET' and path == '/getVaptcha':
         start_response('200 OK', [('Content-Type', 'application/json')])
@@ -37,9 +39,11 @@ def application(environ, start_response):
             if _type =='js':
                 _type = 'javascript'
             start_response('200 OK', [('Content-Type', 'text/'+_type)])            
-            with open(work_dir + '/templates'+path, 'r') as f:
-                # ascii to str
-                fstr = f.read().decode('utf-8')
+            with open(work_dir + '/templates'+path, 'rb') as f:
+                try:
+                    fstr = f.read().decode('utf-8')
+                except AttributeError:
+                    fstr = f.read()
                 stream = fstr.encode('utf-8')
                 return [stream]
         except:        
@@ -50,8 +54,8 @@ def _get_challenge():
     return [_vaptcha.get_challenge().encode('utf-8')]
 
 
-def _validate(_challenge, _token):
-    result = _vaptcha.validate(_challenge, _token)
+def _validate(challenge,token):
+    result = _vaptcha.validate(challenge, token)
     if(result):
         return ['{"msg":"success"}'.encode('utf-8')]
     else:

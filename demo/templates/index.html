@@ -126,43 +126,10 @@
             <a  href="/float.html">浮动式</a>
             <a  href="/embed.html">嵌入式</a>
             <a  href="/invisible.html">隐藏式</a>
-        </div>
-        <div class="demo">
-            <div class="header">
-                <span class="dot red close"></span>
-                <span class="dot orange"></span>
-                <span class="dot green"></span>
-            </div>
-            <div class="container">
-                <div class="loading">
-                    <span style="animation-delay: -.32s"></span>
-                    <span style="animation-delay: -.16s"></span>
-                    <span></span>
-                </div>
-                <iframe name="iframe" frameborder="0" id="iframe"></iframe>
-            </div>
+            <a  href="/popup.html">弹出式</a>
+            <a  href="/dt.html">宕机模式</a>
         </div>
     </div>
-    <script>
-        var demo = document.getElementsByClassName('demo')[0],
-            menu = document.getElementsByClassName('menu')[0],
-            loading = document.getElementsByClassName('loading')[0],
-            iframe = document.getElementById('iframe'),
-            close = document.getElementsByClassName('close')[0];
-        menu.addEventListener('click', function (e) {
-            demo.style.display = 'block';
-            loading.style.display = 'block';
-            iframe.style.display = 'none';
-            setTimeout(function () {
-                iframe.style.display = 'block';
-                loading.style.display = 'none';
-            }, 1000);
-        })
-        demo.addEventListener('click', function (e) {
-            e.target === demo && (demo.style.display = 'none');
-            e.target === close && (demo.style.display = 'none');
-        })
-    </script>
 </body>
 
 </html>
