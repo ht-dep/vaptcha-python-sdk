@@ -143,7 +143,7 @@ class vaptcha(object):
                 return False
             else:
                 signatureTrue = self.__md5_encode(
-                    _time + self.__key + "vaptcha")
+                    str(_time) + self.__key + "vaptcha")
                 if signature == signatureTrue:
                     if(self.__passedSignatures.count(signature) != 0):
                         return False
