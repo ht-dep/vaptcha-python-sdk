@@ -5,14 +5,14 @@ try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 
 
 if __name__ == "__main__":
     # with open('requirements.txt') as f:
     #     required = f.read().splitlines()
     setup(
-        name="VAPTCHA",
+        name="vaptchasdk",
         version=VERSION,
         packages=['vaptchasdk'],
         url='https://github.com/vaptcha/vaptcha-python-sdk',

@@ -1,0 +1,7 @@
+setup.py
+vaptchasdk/__init__.py
+vaptchasdk/vaptcha.py
+vaptchasdk.egg-info/PKG-INFO
+vaptchasdk.egg-info/SOURCES.txt
+vaptchasdk.egg-info/dependency_links.txt
+vaptchasdk.egg-info/top_level.txt
