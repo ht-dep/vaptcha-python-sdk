@@ -17,7 +17,13 @@
 
   [github地址](https://github.com/vaptcha/vaptcha-python-sdk)手动下载获取
 
-- 进入`/vaptcha-python-sdk`目录，安装`vaptchasdk`
+- 直接使用pip安装
+
+  ```shell
+  pip install vaptchasdk
+  ```
+
+- 或进入`/vaptcha-python-sdk`目录,本地安装
 
   > 也许你需要`sudo`命令，或者管理员身份下运行该命令
 
